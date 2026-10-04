@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>7 Meses de Amistad 💛💙</title>
+
+<style>
+
+/* ================================
+   FUENTES
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:'Fredoka', sans-serif;
+
+    background:
+        radial-gradient(circle at 50% 10%, #087bc7 0%, transparent 30%),
+        radial-gradient(circle at 10% 80%, #034c99 0%, transparent 35%),
+        radial-gradient(circle at 90% 70%, #0758a8 0%, transparent 35%),
+        linear-gradient(180deg,#001b46,#002d68,#001536);
+
+    color:white;
+}
+
+
+/* ================================
+   FONDO
+================================ */
+.fondo{
+    position:fixed;
+    inset:0;
+    z-index:-10;
+    overflow:hidden;
+}
+
+/* Luces del fondo */
+
+.luz{
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background:rgba(0,174,255,.15);
+    filter:blur(60px);
+}
+
+.luz:nth-child(1){
+    top:-80px;
+    left:-80px;
+}
+
+.luz:nth-child(2){
+    right:-100px;
+    top:25%;
+    background:rgba(255,220,0,.10);
+}
+
+.luz:nth-child(3){
+    bottom:-100px;
+    left:30%;
+}
+
+
+/* ================================
+   ELEMENTOS FLOTANTES
+================================ */
+.flotantes{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+}
+
+.flotante{
+    position:absolute;
+    bottom:-100px;
+    animation:subir linear infinite;
+    opacity:.85;
+    user-select:none;
+    filter:drop-shadow(0 0 8px rgba(255,220,0,.5));
+}
+
+@keyframes subir{
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(.7);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    50%{
+        transform:
+            translateY(-50vh)
+            rotate(180deg)
+            scale(1);
+    }
+
+    85%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+            translateY(-120vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity:0;
+    }
+}
+
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+.contenedor{
+    width:100%;
+    max-width:560px;
+
+    margin:auto;
+    padding:35px 14px 50px;
+
+    position:relative;
+    z-index:5;
+}
+
+
+/* ================================
+   PERSONAJES AMARILLOS
+================================ */
+.personaje{
+    position:absolute;
+    width:85px;
+    height:115px;
+
+    background:linear-gradient(
+        90deg,
+        #e6b900,
+        #ffe34a,
+        #e8bc00
+    );
+
+    border-radius:45px 45px 30px 30px;
+
+    z-index:20;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.35),
+        inset -8px 0 10px rgba(0,0,0,.15);
+}
+
+/* Ojos */
+
+.ojo{
+    position:absolute;
+    top:20px;
+
+    width:38px;
+    height:38px;
+
+    background:#eee;
+    border:6px solid #777;
+
+    border-radius:50%;
+
+    box-shadow:
+        inset 0 0 0 4px #ccc,
+        0 2px 4px rgba(0,0,0,.4);
+}
+
+.ojo::after{
+    content:"";
+    position:absolute;
+
+    width:12px;
+    height:12px;
+
+    background:#301900;
+
+    border-radius:50%;
+
+    top:8px;
+    left:8px;
+}
+
+.ojo.izq{
+    left:6px;
+}
+
+.ojo.der{
+    right:6px;
+}
+
+/* Correa */
+
+.gafas{
+    position:absolute;
+    top:25px;
+    left:0;
+    right:0;
+
+    height:20px;
+
+    background:#303030;
+}
+
+/* Ropa */
+
+.peto{
+    position:absolute;
+
+    bottom:0;
+    left:8px;
+    right:8px;
+
+    height:43px;
+
+    background:#1769a9;
+
+    border-radius:8px 8px 25px 25px;
+
+    border-top:5px solid #0c4777;
+}
+
+/* Sonrisa */
+
+.boca{
+    position:absolute;
+
+    bottom:24px;
+    left:28px;
+
+    width:30px;
+    height:17px;
+
+    background:#351200;
+
+    border-radius:0 0 20px 20px;
+}
+
+
+/* Personaje superior izquierdo */
+
+.minion-1{
+    top:-10px;
+    left:-35px;
+    transform:rotate(-10deg);
+}
+
+/* Personaje superior derecho */
+
+.minion-2{
+    top:15px;
+    right:-35px;
+    transform:rotate(9deg) scale(.9);
+}
+
+
+/* ================================
+   CARTA
+================================ */
+.carta{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(5,43,92,.98),
+            rgba(0,20,55,.98)
+        );
+
+    border:4px solid #ffd21a;
+
+    border-radius:32px;
+
+    padding:30px 20px 25px;
+
+    box-shadow:
+        0 0 0 5px #0755a0,
+        0 0 25px rgba(255,210,0,.45),
+        0 20px 60px rgba(0,0,0,.5);
+
+    animation:flotarCarta 4s ease-in-out infinite alternate;
+}
+
+@keyframes flotarCarta{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-7px);
+    }
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+.titulo{
+
+    text-align:center;
+
+    font-size:31px;
+    font-weight:700;
+
+    line-height:1.1;
+
+    color:white;
+
+    text-shadow:
+        3px 3px 0 #0755a0,
+        0 0 15px rgba(255,255,255,.3);
+
+    margin-bottom:8px;
+}
+
+.titulo span{
+    color:#ffd21a;
+}
+
+
+/* Subtítulo */
+
+.subtitulo{
+
+    text-align:center;
+
+    color:#9ee9ff;
+
+    font-size:17px;
+
+    margin-bottom:22px;
+}
+
+
+/* ================================
+   ADORNOS
+================================ */
+.corazon{
+    position:absolute;
+    color:#ff5b91;
+
+    font-size:27px;
+
+    animation:latido 1.5s infinite;
+}
+
+.corazon-1{
+    top:25px;
+    left:20px;
+}
+
+.corazon-2{
+    top:35px;
+    right:20px;
+}
+
+@keyframes latido{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+
+/* ================================
+   MENSAJE
+================================ */
+.mensaje{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.03)
+        );
+
+    border:2px dashed rgba(255,210,0,.7);
+
+    border-radius:22px;
+
+    padding:20px 17px;
+
+    color:#f4f9ff;
+
+    font-family:'Patrick Hand',cursive;
+
+    font-size:21px;
+
+    line-height:1.42;
+
+    text-align:center;
+
+    box-shadow:
+        inset 0 0 20px rgba(0,0,0,.15);
+
+    margin-bottom:25px;
+}
+
+.mensaje strong{
+
+    display:block;
+
+    color:#ffd21a;
+
+    font-family:'Fredoka',sans-serif;
+
+    font-size:23px;
+
+    margin-bottom:12px;
+
+    text-shadow:
+        0 0 8px rgba(255,210,0,.5);
+}
+
+
+/* ================================
+   ETIQUETA 7 MESES
+================================ */
+.meses{
+
+    width:max-content;
+    max-width:100%;
+
+    margin:0 auto 18px;
+
+    padding:9px 20px;
+
+    background:#ffd21a;
+
+    color:#002657;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    border-radius:50px;
+
+    box-shadow:
+        0 5px 0 #b88c00,
+        0 0 15px rgba(255,210,0,.45);
+
+    transform:rotate(-2deg);
+}
+
+
+/* ================================
+   VIDEO
+================================ */
+.video-contenedor{
+
+    position:relative;
+
+    width:100%;
+
+    background:#000;
+
+    border-radius:20px;
+
+    padding:6px;
+
+    border:3px solid #ffd21a;
+
+    box-shadow:
+        0 0 0 4px #0755a0,
+        0 0 25px rgba(255,210,0,.4);
+
+    overflow:hidden;
+}
+
+.video-contenedor video{
+
+    width:100%;
+
+    display:block;
+
+    max-height:420px;
+
+    border-radius:14px;
+
+    background:#000;
+
+    outline:none;
+}
+
+
+/* ================================
+   TEXTO DEBAJO DEL VIDEO
+================================ */
+.final{
+
+    text-align:center;
+
+    margin-top:24px;
+
+    font-size:17px;
+
+    color:#d8f6ff;
+
+    line-height:1.5;
+}
+
+.final strong{
+
+    color:#ffd21a;
+
+    font-size:20px;
+}
+
+
+/* ================================
+   BANANA DECORATIVA
+================================ */
+.banana{
+
+    font-size:35px;
+
+    display:inline-block;
+
+    animation:banana 2s ease-in-out infinite alternate;
+}
+
+@keyframes banana{
+
+    from{
+        transform:rotate(-12deg);
+    }
+
+    to{
+        transform:rotate(12deg);
+    }
+}
+
+
+/* ================================
+   PIE
+================================ */
+.pie{
+
+    text-align:center;
+
+    margin-top:18px;
+
+    color:#ffd21a;
+
+    font-size:14px;
+
+    opacity:.9;
+}
+
+
+/* ================================
+   ESTRELLAS
+================================ */
+.estrella{
+
+    position:absolute;
+
+    color:#ffe13b;
+
+    font-size:22px;
+
+    animation:brillar 2s ease-in-out infinite;
+}
+
+.estrella-1{
+    top:170px;
+    left:-12px;
+}
+
+.estrella-2{
+    top:320px;
+    right:-10px;
+}
+
+.estrella-3{
+    bottom:210px;
+    left:-8px;
+}
+
+.estrella-4{
+    bottom:80px;
+    right:-10px;
+}
+
+@keyframes brillar{
+
+    0%,100%{
+        opacity:.5;
+        transform:scale(.8) rotate(0deg);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.25) rotate(20deg);
+    }
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media(max-width:600px){
+
+    .contenedor{
+        padding:25px 10px 40px;
+    }
+
+    .carta{
+        padding:27px 14px 22px;
+        border-width:3px;
+        border-radius:25px;
+    }
+
+    .titulo{
+        font-size:26px;
+    }
+
+    .subtitulo{
+        font-size:15px;
+    }
+
+    .mensaje{
+        font-size:19px;
+        padding:17px 13px;
+    }
+
+    .personaje{
+        transform:scale(.72);
+    }
+
+    .minion-1{
+        left:-43px;
+    }
+
+    .minion-2{
+        right:-43px;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .titulo{
+        font-size:23px;
+    }
+
+    .mensaje{
+        font-size:18px;
+    }
+
+    .personaje{
+        opacity:.7;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     FONDO
+================================ -->
+
+<div class="fondo">
+
+    <div class="luz"></div>
+    <div class="luz"></div>
+    <div class="luz"></div>
+
+</div>
+
+
+<!-- ================================
+     ELEMENTOS FLOTANTES
+================================ -->
+
+<div class="flotantes" id="flotantes"></div>
+
+
+<!-- ================================
+     CONTENEDOR
+================================ -->
+
+<div class="contenedor">
+
+
+    <!-- PERSONAJE ARRIBA IZQUIERDA -->
+
+    <div class="personaje minion-1">
+
+        <div class="gafas"></div>
+
+        <div class="ojo izq"></div>
+        <div class="ojo der"></div>
+
+        <div class="boca"></div>
+
+        <div class="peto"></div>
+
+    </div>
+
+
+    <!-- PERSONAJE ARRIBA DERECHA -->
+
+    <div class="personaje minion-2">
+
+        <div class="gafas"></div>
+
+        <div class="ojo izq"></div>
+        <div class="ojo der"></div>
+
+        <div class="boca"></div>
+
+        <div class="peto"></div>
+
+    </div>
+
+
+
+    <!-- ================================
+         CARTA PRINCIPAL
+    ================================= -->
+
+    <div class="carta">
+
+
+        <!-- CORAZONES -->
+
+        <div class="corazon corazon-1">💛</div>
+        <div class="corazon corazon-2">🩷</div>
+
+
+        <!-- ESTRELLAS -->
+
+        <div class="estrella estrella-1">⭐</div>
+        <div class="estrella estrella-2">✨</div>
+        <div class="estrella estrella-3">⭐</div>
+        <div class="estrella estrella-4">✨</div>
+
+
+        <!-- TÍTULO -->
+
+        <div class="titulo">
+
+            💛 Para una persona
+            <br>
+
+            <span>muy especial</span> 💙
+
+        </div>
+
+
+        <div class="subtitulo">
+
+            🍌 Una pequeña sorpresa para mi mejor amiga 🍌
+
+        </div>
+
+
+
+        <!-- ================================
+             MENSAJE
+        ================================= -->
+
+        <div class="mensaje">
+
+            <strong>
+                💛💙 Para mi mejor amiga 💙💛
+            </strong>
+
+            A veces no hacen falta tantos años para darse cuenta de que alguien llegó a tu vida para quedarse. Y tú eres una de esas personas. 🥹
+
+            <br><br>
+
+            En poco tiempo hemos creado recuerdos que para mí significan muchísimo. Gracias por cada conversación, cada risa, cada consejo y cada momento que hemos compartido. 💛
+
+            <br><br>
+
+            Tal vez no siempre encuentre las palabras exactas para decirte cuánto valoro nuestra amistad, pero quiero que sepas que eres una persona muy importante para mí. 🩷
+
+            <br><br>
+
+            Ojalá podamos seguir sumando meses, años, aventuras y recuerdos juntos. Porque una amistad como la nuestra no quiero que se quede solamente en una etapa de la vida. ⭐
+
+            <br><br>
+
+            Gracias por existir y por ser mi mejor amiga.
+
+            <br>
+
+            <strong>
+                Te quiero muchísimo. 💛💙🥹
+            </strong>
+
+        </div>
+
+
+
+        <!-- ================================
+             7 MESES
+        ================================= -->
+
+        <div class="meses">
+
+            ⭐ 7 MESES DE AMISTAD ⭐
+
+        </div>
+
+
+
+        <!-- ================================
+             VIDEO
+             SOLO CAMBIA video.mp4
+        ================================= -->
+
+        <div class="video-contenedor">
+
+            <video controls playsinline>
+
+                <source
+                    src="video.mp4"
+                    type="video/mp4"
+                >
+
+                Tu navegador no soporta la reproducción de video.
+
+            </video>
+
+        </div>
+
+
+
+        <!-- ================================
+             MENSAJE FINAL
+        ================================= -->
+
+        <div class="final">
+
+            <span class="banana">🍌</span>
+
+            <br>
+
+            La vida es mucho más bonita
+            <br>
+
+            cuando tienes una mejor amiga
+            <br>
+
+            como tú. 💛💙
+
+            <br><br>
+
+            <strong>
+                Gracias por estos 7 meses. 🥹🩷
+            </strong>
+
+        </div>
+
+
+        <div class="pie">
+
+            🍌 💛 Nuestra amistad apenas comienza 💙 🍌
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   ELEMENTOS FLOTANTES
+========================================= */
+
+const contenedor = document.getElementById("flotantes");
+
+const elementos = [
+
+    "🍌",
+    "💛",
+    "🩷",
+    "💙",
+    "⭐",
+    "✨",
+    "🍌",
+    "💛"
+
+];
+
+
+for(let i = 0; i < 35; i++){
+
+    const elemento = document.createElement("div");
+
+    elemento.classList.add("flotante");
+
+    elemento.textContent =
+        elementos[
+            Math.floor(
+                Math.random() * elementos.length
+            )
+        ];
+
+
+    /* Posición */
+
+    elemento.style.left =
+        Math.random() * 100 + "%";
+
+
+    /* Tamaño */
+
+    elemento.style.fontSize =
+        (18 + Math.random() * 24) + "px";
+
+
+    /* Velocidad */
+
+    elemento.style.animationDuration =
+        (7 + Math.random() * 9) + "s";
+
+
+    /* Retraso */
+
+    elemento.style.animationDelay =
+        (-Math.random() * 15) + "s";
+
+
+    contenedor.appendChild(elemento);
+
+}
+
+
+/* =========================================
+   EFECTO DE MOVIMIENTO DEL MOUSE
+   SOLO EN COMPUTADOR
+========================================= */
+
+document.addEventListener("mousemove", (e) => {
+
+    const personajes =
+        document.querySelectorAll(".personaje");
+
+    const x =
+        (window.innerWidth / 2 - e.clientX) / 80;
+
+    const y =
+        (window.innerHeight / 2 - e.clientY) / 80;
+
+
+    personajes.forEach((personaje, index) => {
+
+        const direccion =
+            index === 0 ? 1 : -1;
+
+        personaje.style.marginLeft =
+            (x * direccion) + "px";
+
+        personaje.style.marginTop =
+            (y * direccion) + "px";
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
